@@ -5,68 +5,86 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-  <div class="header">
-    <div class="logo"></div>
+  <section class="header">
+    <div class="logo">
+      <img class="logo" src="/assets/logo.svg" alt="logo">
+    </div>
     <nav>
-      <li>Jane Doe</li>
-      <li>Tell us about yourself</li>
-      <li>Slider</li>
+      <ul>
+        <li><a href="#profile">Jane Doe</a></li>
+        <li><a href="#about">Tell us about yourself</a></li>
+        <li><a href="#slider">Slider</a></li>
+      </ul>
     </nav>
-  </div>
-  <div class="profile">
+  </section>
+  <section class="profile" id="profile">
     <div class="container">
-      <div class="img">
+      <div class="profile-photo">
         <img src="./assets/profile.jpg" alt="userphoto">
       </div>
       <div class="text">
         <div class="info">
-          <h1 class="name">Jane Doe</h1>
-          <div class="info-data">
-            <li><span class="field">Date of birth</span>21.04.2001</li>
-            <li><span class="field">Gender</span>Female</li>
-            <li><span class="field">Country</span>Corea</li>
+          <h1>Jane Doe</h1>
+          <div class="info-data small-text">
+            <ul>
+              <li><span class="field">Date of birth</span>21.04.2001</li>
+              <li><span class="field">Gender</span>Female</li>
+              <li><span class="field">Country</span>Corea</li>
+            </ul>
           </div>
         </div>
         <div class="description">
-          <h3 class="about">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/>
-            <br/>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </h3>
+          <h3 class="about">About me</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <p/>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="form-section">
+  </section>
+  <section class="form-section" id="about">
     <h2>Tell us about yourself</h2>
-    <div class="container-forms">
-      <div class="forms">
-        <div class="form">
-          <p>Your name</p>
-          <input type="text" value="Nikolay">
+    <form>
+      <div class="step" data-id="1">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" placeholder="Nikolay">
+          <div class="error-message">
+            Invalid name
+          </div>
         </div>
-        <div class="form">
-          <p>Your gender</p>
-          <input type="text" value="Male">
-        </div>
-        <div class="form">
-          <p>Your country</p>
-          <input type="text" value="Russia">
-        </div>
-        <div class="form">
-          <p>Your city</p>
-          <input type="text" value="Moscow">
-        </div>
-        <div class="form">
-          <p>Your date of birth</p>
-          <input type="text" value="01.04.2001">
+        <div class="form-group">
+          <label for="gender">Your gender</label>
+          <input type="text" id="gender" placeholder="Male">
         </div>
       </div>
-      <div class="container-uploader">
+      <div class="step" data-id="2">
+        <div class="form-group">
+          <label for="country">Your country</label>
+          <input type="text" id="country" placeholder="Russia">
+        </div>
+        <div class="form-group">
+          <label for="city">Your city</label>
+          <input type="text" id="city" placeholder="Moscow">
+        </div>
+        <div class="form-group">
+          <label for="dob">Your date of birth</label>
+          <input type="text" id="dob" placeholder="01.04.2001">
+        </div>
+      </div>
+      <div class="step container-uploader" data-id="3">
         <div class="uploader">
-          <p class="uploader-text">Proof your identity with some documents</p>
+          <label class="uploader-text">Proof your identity with some documents</label>
+          <input type="file" class="form-control-file">
           <button class="add">Add document</button>
         </div>
         <div class="file">
@@ -83,9 +101,9 @@
           <p class="success-message">Completed</p>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="slider-section">
+    </form>
+  </section>
+  <section class="slider-section" id="slider">
     <div class="slider">
       <div class="slider-container">        
         <div class="slider-item">
@@ -118,6 +136,6 @@
         <li data-slide-to="2"></li>
       </ol>
     </div>
-  </div>
+  </section>
 </body>
 </html>

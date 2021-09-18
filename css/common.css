@@ -1,0 +1,85 @@
+html {
+    line-height: 1.15;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: #000;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    text-transform: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* typo */
+
+h1, h2, h3 {
+    font-style: normal;
+    font-weight: 800;
+    color: #303030;
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 72px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 72px;
+}
+
+h3 {
+    font-size: 27px;
+    line-height: 36px;
+}
+
+.small-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+        line-height: 41px;
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    body {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    small {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
