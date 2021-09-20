@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/slider.css">
 </head>
 <body>
   <section class="header">
@@ -113,21 +114,24 @@
   <section class="slider-section" id="slider">
     <div class="slider">
       <div class="slider-container">        
-        <div class="slider-item">
+        <div class="slider-item" data-id="1">
+          <div class="cover"></div>
           <img src="./assets/slider1.jpg" alt="slide1">
           <div class="caption">
             <h2>Slide this photo</h2>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
         </div>        
-        <div class="slider-item">
+        <div class="slider-item" data-id="2">
+          <div class="cover"></div>
           <img src="./assets/slider2.jpg" alt="slide2">
           <div class="caption">
             <h2>Slide this photo</h2>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
         </div>        
-        <div class="slider-item">
+        <div class="slider-item" data-id="3">
+          <div class="cover"></div>
           <img src="./assets/slider3.jpg" alt="slide3">
           <div class="caption">
             <h2>Slide this photo</h2>
@@ -135,13 +139,13 @@
           </div>
         </div>
       </div>
-      <a href="" class="slider-control-prev"></a>
-      <a href="" class="slider-control-next"></a>
-      <ol class="slider-indicators">
+      <a href="#" class="slider-control prev"></a>
+      <a href="#" class="slider-control next"></a>
+      <ul class="slider-indicators">
         <li data-slide-to="0" class="active"></li>
         <li data-slide-to="1"></li>
         <li data-slide-to="2"></li>
-      </ol>
+      </ul>
     </div>
   </section>
 </body>
