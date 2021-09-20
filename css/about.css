@@ -1,0 +1,150 @@
+.form-section {
+    display: flex;
+    flex-direction: column;
+    background: #F8F3FF;
+}
+
+.form-section h2 {
+    margin: 56px 0 40px 64px;
+}
+
+form {
+    padding: 0 64px 48px;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    height: 106px;
+    margin-right: 32px;
+}
+
+.form-group input {
+    width: 304px;
+}
+
+.step.container-uploader {
+    flex-direction: column;
+    height: auto;
+}
+
+input.form-control-file {
+    display: none;
+}
+
+label.uploader-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 976px;
+    height: 104px;
+    background: #FFFFFF;
+
+    border: 1px dashed #D9BBFF;
+    border-radius: 12px;
+    color: #9993BD;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+button.add {
+    width: 212px;
+    margin: 0 0 0 16px;
+    color: #8E43ED;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 256px;
+    height: 56px;
+    padding: 8px 12px;
+    background: #FFFFFF;
+    border: 1px solid #D9BBFF;
+    border-radius: 12px;
+}
+
+.file .file-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.file .file-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 90px;
+    margin-right: 8px;
+}
+
+.file .file-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.file .file-data .file-name {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 2px;
+    color: #303030;
+}
+
+.file .file-data .file-size {
+    font-size: 12px;
+    line-height: 18px;
+    color: #AFAFAF;
+
+}
+
+.file .file-delete {
+    margin-right: 4px;
+}
+
+.send {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 367px;
+    height: 56px;
+    margin-top: 48px;
+}
+
+button.send-info {
+    width: 212px;
+    height: 56px;
+    background: #DED9E4;
+    border: none;
+    border-radius: 12px;
+    color: #FFFFFF;
+}
+
+.send .success {
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+    padding: 10px 0;
+}
+
+.send .success img {
+    width: 42px;
+    height: 42px;
+}
+
+.send .success .success-message {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #303030;
+    padding: 10px 0;
+    margin-left: 8px;
+}

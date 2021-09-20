@@ -5,10 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
   <section class="header">
@@ -43,7 +44,7 @@
           <h3 class="about">About me</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          <p/>
+          </p>
           <p>
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
@@ -57,45 +58,51 @@
       <div class="step" data-id="1">
         <div class="form-group">
           <label for="name">Your name</label>
-          <input type="text" id="name" placeholder="Nikolay">
+          <input type="text" id="name" placeholder="Tell us about yourself">
           <div class="error-message">
             Invalid name
           </div>
         </div>
         <div class="form-group">
           <label for="gender">Your gender</label>
-          <input type="text" id="gender" placeholder="Male">
+          <input type="text" id="gender" placeholder="Chose your gender">
         </div>
       </div>
       <div class="step" data-id="2">
         <div class="form-group">
           <label for="country">Your country</label>
-          <input type="text" id="country" placeholder="Russia">
+          <input type="text" id="country" placeholder="Where are you from?">
         </div>
         <div class="form-group">
           <label for="city">Your city</label>
-          <input type="text" id="city" placeholder="Moscow">
+          <input type="text" id="city" placeholder="Your native city">
         </div>
         <div class="form-group">
           <label for="dob">Your date of birth</label>
-          <input type="text" id="dob" placeholder="01.04.2001">
+          <input type="text" id="dob" placeholder="dd.mm.yyyy">
         </div>
       </div>
       <div class="step container-uploader" data-id="3">
         <div class="uploader">
-          <label class="uploader-text">Proof your identity with some documents</label>
-          <input type="file" class="form-control-file">
-          <button class="add">Add document</button>
+          <label class="uploader-text" for="file">
+            Proof your identity with some documents
+            <button class="add">Add document</button>
+          </label>
+          <input type="file" id="file" class="form-control-file">
         </div>
         <div class="file">
-          <img src="./assets/file-img.jpg" alt="file-img">
-          <p class="file-name">File_name_001</p>
-          <p class="file-size">JPG 2.5 mb</p>
-          <a href="#"><img src="./assets/trashbin.svg" alt="delete"></a>
+          <div class="file-info">
+            <img src="./assets/file-img.jpg" class="file-img" alt="file-img">
+            <div class="file-data">
+              <p class="file-name">File_name_001</p>
+              <p class="file-size">JPG 2.5 mb</p>
+            </div>
+          </div>
+          <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>
         </div>
       </div>
       <div class="send">
-        <button class="send-info">Send Info</button>
+        <button class="send-info">Send info</button>
         <div class="success">
           <img src="./assets/success.svg" alt="completed">
           <p class="success-message">Completed</p>
