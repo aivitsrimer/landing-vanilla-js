@@ -1,15 +1,31 @@
 .form-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: #F8F3FF;
 }
 
+.form-section .about-rectangles-left {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    z-index: 1;
+}
+
+.form-section .about-rectangles-right {
+    position: absolute;
+    top: 47px;
+    right: 0;
+    z-index: 1;
+}
+
 .form-section h2 {
-    margin: 56px 0 40px 64px;
+    margin: 56px 0 40px;
 }
 
 form {
     padding: 0 64px 48px;
+    z-index: 2;
 }
 
 .step {
@@ -32,6 +48,7 @@ form {
 .step.container-uploader {
     flex-direction: column;
     height: auto;
+    margin-top: 32px;
 }
 
 input.form-control-file {
@@ -131,13 +148,14 @@ button.send-info {
 .send .success {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-left: 24px;
     padding: 10px 0;
 }
 
 .send .success img {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
 }
 
 .send .success .success-message {
