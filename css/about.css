@@ -73,9 +73,7 @@ label.uploader-text {
 }
 
 button.add {
-    width: 212px;
     margin: 0 0 0 16px;
-    color: #8E43ED;
 }
 
 .file {
@@ -134,15 +132,6 @@ button.add {
     width: 367px;
     height: 56px;
     margin-top: 48px;
-}
-
-button.send-info {
-    width: 212px;
-    height: 56px;
-    background: #DED9E4;
-    border: none;
-    border-radius: 12px;
-    color: #FFFFFF;
 }
 
 .send .success {

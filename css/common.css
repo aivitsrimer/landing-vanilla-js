@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+input, select {
+    -webkit-appearance: none;
+    box-shadow: none;
+    outline: none;
+}
+
 html {
     line-height: 1.15;
 }
@@ -18,7 +24,6 @@ body {
     color: #000;
 }
 
-button,
 input,
 select {
     font-family: inherit;
@@ -26,15 +31,88 @@ select {
     font-size: 16px;
     line-height: 24px;
 
-    width: 416px;
     height: 56px;
     margin: 0;
     padding: 16px;
     text-transform: none;
 
     background: #FFFFFF;
-    border: 1px solid #8E43ED;
+    border: 1px solid #D9BBFF;
     border-radius: 12px;
+    color: #303030;;
+}
+
+button,
+button.primary {
+    width: 212px;
+    height: 56px;
+    margin: 0;
+    padding: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    background: #8E43ED;
+    color: #FFFFFF;
+    border: 1px solid #D9BBFF;
+    border-radius: 12px;
+}
+
+button:hover,
+button.primary:hover {
+    background: #6813D3;
+    cursor: pointer;
+}
+
+button:active,
+button.primary:active {
+    background: #500AA9;
+}
+
+button[disabled],
+button.primary[disabled] {
+    background: #DED9E4;
+    border: none;
+    cursor: default;
+}
+
+button.secondary {
+    background: #FFFFFF;
+    border-color: #8E43ED;
+    color: #8E43ED;
+}
+
+button.secondary:hover {
+    background: #FAF8FE;
+    border-color: #8E43ED;
+    color: #8E43ED;
+}
+
+button.secondary:active {
+    background: #F0E5FE;
+    border-color: #8E43ED;
+    color: #8E43ED;
+}
+
+button.secondary[disabled] {
+    background: #FFFFFF;
+    border: 1px solid #D9BBFF;
+    color: #D9BBFF;
+}
+
+input,
+select {
+    width: 416px;
+}
+
+input:hover, input:focus {
+    border: 1px solid #8E43ED;
+}
+
+input.error {
+    background: #FFF5F5;
+    border: 1px solid #ED4376;
 }
 
 label, .error-message {
@@ -127,3 +205,4 @@ p {
         line-height: 16px;
     }
 }
+
