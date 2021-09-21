@@ -12,6 +12,18 @@
     justify-content: space-between;
 }
 
+.profile .profile-vector-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profile .profile-vector-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 .profile .profile-rectangles {
     position: absolute;
     bottom: 45px;
@@ -57,6 +69,6 @@
     margin: 64px 0 24px;
 }
 
-
-
-
+.profile .description p {
+    margin-bottom: 20px;
+}
