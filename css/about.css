@@ -41,7 +41,8 @@ form {
     margin-right: 32px;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     width: 304px;
 }
 
@@ -76,6 +77,10 @@ button.add {
     margin: 0 0 0 16px;
 }
 
+.files {
+    display: flex;
+}
+
 .file {
     display: flex;
     flex-direction: row;
@@ -89,6 +94,10 @@ button.add {
     border-radius: 12px;
 }
 
+.file + .file {
+    margin-left: 8px;
+}
+
 .file .file-info {
     display: flex;
     flex-direction: row;
@@ -99,12 +108,13 @@ button.add {
     width: 40px;
     height: 40px;
     border-radius: 90px;
-    margin-right: 8px;
+    margin-right: 4px;
 }
 
 .file .file-data {
     display: flex;
     flex-direction: column;
+    padding-left: 4px;
 }
 
 .file .file-data .file-name {
