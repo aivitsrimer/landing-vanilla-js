@@ -16,12 +16,15 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 32px;
     color: #000;
+}
+
+body, button {
+    font-family: 'Montserrat', sans-serif;
 }
 
 input,
@@ -169,6 +172,7 @@ h3 {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    color: #303030;
 }
 
 ul {

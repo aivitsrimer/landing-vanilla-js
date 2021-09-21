@@ -32,6 +32,11 @@ form {
     display: flex;
     flex-direction: row;
     margin-bottom: 18px;
+    visibility: hidden;
+}
+
+.step.active {
+    visibility: visible;
 }
 
 .form-group {

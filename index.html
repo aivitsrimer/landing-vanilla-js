@@ -61,35 +61,35 @@
     <img src="./assets/about-rectangles-right.png" class="about-rectangles-right" alt="rectangles">
     <form>
       <h2>Tell us about yourself</h2>
-      <div class="step" data-id="1">
+      <div class="step active" data-id="1">
         <div class="form-group">
           <label for="name">Your name</label>
-          <input type="text" id="name" class="error" placeholder="Tell us your name" value="fghgfhgfh">
-          <div class="error-message">
-            Invalid name
-          </div>
+          <input type="text" id="name" required placeholder="Tell us your name">
+<!--          <div class="error-message">-->
+<!--            Invalid name-->
+<!--          </div>-->
         </div>
         <div class="form-group">
           <label for="gender">Your gender</label>
-          <select id="gender">
+          <select id="gender" required>
             <option value="0">Chose your gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
         </div>
       </div>
       <div class="step" data-id="2">
         <div class="form-group">
           <label for="country">Your country</label>
-          <input type="text" id="country" placeholder="Where are you from?">
+          <input type="text" id="country" required placeholder="Where are you from?">
         </div>
         <div class="form-group">
           <label for="city">Your City</label>
-          <input type="text" id="city" placeholder="Your native city">
+          <input type="text" id="city" required placeholder="Your native city">
         </div>
         <div class="form-group">
           <label for="dob">Your date of birth</label>
-          <input type="text" id="dob" placeholder="dd.mm.yyyy">
+          <input type="date" id="dob" required placeholder="dd.mm.yyyy">
         </div>
       </div>
       <div class="step container-uploader" data-id="3">
@@ -98,7 +98,7 @@
             Proof your identity with some documents
             <button class="secondary add">Add document</button>
           </label>
-          <input type="file" id="file" class="form-control-file">
+          <input type="file" id="file" required class="form-control-file">
         </div>
         <div class="files">
           <div class="file">
@@ -123,7 +123,7 @@
         </div>
         </div>
       <div class="send">
-        <button class="primary send-info" disabled>Send info</button>
+        <button type="submit" class="primary send-info" disabled>Send info</button>
         <div class="success">
           <img src="./assets/success.svg" alt="completed">
           <p class="success-message">Completed</p>
@@ -168,5 +168,6 @@
       </ul>
     </div>
   </section>
+  <script src="index.js"></script>
 </body>
 </html>
