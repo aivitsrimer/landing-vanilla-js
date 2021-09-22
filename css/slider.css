@@ -131,6 +131,7 @@
     margin: 6px;
     border: 2px solid #FFFFFF;
     border-radius: 90px;
+    transition: background-color 1s;
 }
 
 .slider-indicators li.active {
