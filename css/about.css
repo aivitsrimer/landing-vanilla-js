@@ -84,6 +84,7 @@ button.add {
 
 .files {
     display: flex;
+    min-height: 56px;
 }
 
 .file {
@@ -120,6 +121,12 @@ button.add {
     display: flex;
     flex-direction: column;
     padding-left: 4px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.file .file-img + .file-data {
+    max-width: 148px;
 }
 
 .file .file-data .file-name {

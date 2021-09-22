@@ -94,34 +94,14 @@
       </div>
       <div class="step container-uploader" data-id="3">
         <div class="uploader">
-          <label class="uploader-text" for="file">
+          <label class="uploader-text" for="files">
             Proof your identity with some documents
-            <button class="secondary add">Add document</button>
+            <button type="button" class="secondary add">Add document</button>
           </label>
-          <input type="file" id="file" required class="form-control-file">
+          <input type="file" id="files" name="files" required multiple class="form-control-file">
         </div>
-        <div class="files">
-          <div class="file">
-            <div class="file-info">
-              <img src="./assets/file-img.jpg" class="file-img" alt="file-img">
-              <div class="file-data">
-                <p class="file-name">File_name_001</p>
-                <p class="file-size">JPG 2.5 mb</p>
-              </div>
-            </div>
-            <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>
-          </div>
-          <div class="file">
-            <div class="file-info">
-              <div class="file-data">
-                <p class="file-name">File_name_001</p>
-                <p class="file-size">PDF 2.5 mb</p>
-              </div>
-            </div>
-            <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>
-          </div>
-        </div>
-        </div>
+        <div class="files"></div>
+      </div>
       <div class="send">
         <button type="submit" class="primary send-info" disabled>Send info</button>
         <div class="success">
