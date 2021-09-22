@@ -38,29 +38,30 @@ function fieldsHandler(event) {
     }
 }
 
-function fileChangeHandler() {
-    for (let i = 0; i < filesInput.files.length; i++) {
-        fileList.push(filesInput.files[i]);
-    }
-    fileList.forEach((file) => {
-        let nameSplitted = file.name.split('.');
-        let name = nameSplitted[0];
-        let size = calculateHumanFileSize(file.size);
-        let extension = nameSplitted[nameSplitted.length - 1].toUpperCase();
-        console.log(file);
-        console.log(name, size, extension);
+function renderFile(file) {
+    let nameSplitted = file.name.split('.');
+    let name = nameSplitted[0];
+    let size = calculateHumanFileSize(file.size);
+    let extension = nameSplitted[nameSplitted.length - 1].toUpperCase();
 
-        let template = `<div class="file">
-            <div class="file-info">
+    let template = document.createElement('div');
+    template.classList.add('file');
+    template.innerHTML = `<div class="file-info">
               <div class="file-data">
                 <p class="file-name">${name}</p>
                 <p class="file-size">${extension} ${size}</p>
               </div>
             </div>
-            <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>
-          </div>`;
-        document.querySelector('.files').innerHTML = template;
-    })
+            <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>`;
+    document.querySelector('.files').appendChild(template);
+}
+
+function fileChangeHandler() {
+    let files = filesInput.files;
+    for (let i = 0; i < files.length; i++) {
+        fileList.push(files[i]);
+        renderFile(files[i]);
+    }
 }
 
 function calculateHumanFileSize(fileSizeInBytes) {

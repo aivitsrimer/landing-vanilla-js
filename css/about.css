@@ -121,7 +121,7 @@ button.add {
     display: flex;
     flex-direction: column;
     padding-left: 4px;
-    max-width: 200px;
+    max-width: 195px;
     overflow: hidden;
 }
 
@@ -134,13 +134,13 @@ button.add {
     line-height: 18px;
     margin-bottom: 2px;
     color: #303030;
+    white-space: nowrap;
 }
 
 .file .file-data .file-size {
     font-size: 12px;
     line-height: 18px;
     color: #AFAFAF;
-
 }
 
 .file .file-delete {
