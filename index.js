@@ -72,11 +72,17 @@ function renderFile(file, id) {
     let name = nameSplitted[0];
     let size = calculateHumanFileSize(file.size);
     let extension = nameSplitted[nameSplitted.length - 1].toUpperCase();
+    let image = '';
+
+    if (['JPG', 'JPEG', 'PNG', 'SVG', 'GIF', 'WEBP'].includes(extension)) {
+        image = `<img src="${URL.createObjectURL(file)}" class="file-img" alt="file-img">`;
+    }
 
     let template = document.createElement('div');
     template.classList.add('file');
     template.dataset.id = id;
     template.innerHTML = `<div class="file-info">
+              ${image}
               <div class="file-data">
                 <p class="file-name">${name}</p>
                 <p class="file-size">${extension} ${size}</p>

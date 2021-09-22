@@ -158,6 +158,7 @@ button.add {
     height: 40px;
     border-radius: 90px;
     margin-right: 4px;
+    object-fit: cover;
 }
 
 .file .file-data {
