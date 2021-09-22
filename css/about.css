@@ -55,6 +55,7 @@ form {
     flex-direction: column;
     height: auto;
     margin-top: 32px;
+    margin-bottom: 10px;
 }
 
 input.form-control-file {
@@ -84,7 +85,7 @@ button.add {
 
 .files {
     display: flex;
-    min-height: 56px;
+    min-height: 64px;
     max-width: 976px;
     flex-wrap: wrap;
 }
@@ -163,6 +164,7 @@ button.add {
     align-items: center;
     margin-left: 24px;
     padding: 10px 0;
+    visibility: hidden;
 }
 
 .send .success img {

@@ -6,7 +6,7 @@ let dobInput = document.querySelector('#dob');
 let filesInput = document.querySelector('#files');
 
 let addFileButton = document.querySelector('.uploader .add');
-let sendInfoButton = document.querySelector('.send [type="submit"]');
+let submitButton = document.querySelector('.send [type="submit"]');
 
 let fileList = [];
 
@@ -18,6 +18,7 @@ dobInput.addEventListener('change', fieldsHandler);
 
 addFileButton.addEventListener('click', () => filesInput.click());
 filesInput.addEventListener('change', fileChangeHandler);
+submitButton.addEventListener('click', toggleSubmitButton);
 
 function showNextStep(nextStepId) {
     if (nextStepId <= 3) {
@@ -45,6 +46,7 @@ function fileChangeHandler() {
         renderFile(files[i], fileList.length - 1);
         let fileDeleteButtons = document.querySelectorAll('.files .file-delete');
         fileDeleteButtons[fileDeleteButtons.length - 1].addEventListener('click', deleteFileHandler);
+        toggleSubmitButton();
     }
 }
 
@@ -83,4 +85,15 @@ function deleteFileHandler(event) {
     let currentFile = event.target.closest('.file');
     delete fileList[parseInt(currentFile.dataset.id)];
     currentFile.remove();
+    toggleSubmitButton();
+}
+
+function toggleSubmitButton() {
+    console.log(submitButton.attributes)
+    if (document.querySelector('.files').innerHTML) {
+        submitButton.disabled = false;
+        console.log(submitButton.attributes)
+    } else {
+        submitButton.disabled = true;
+    }
 }
