@@ -18,6 +18,18 @@ countryInput.addEventListener('change', fieldsHandler);
 cityInput.addEventListener('change', fieldsHandler);
 dobInput.addEventListener('change', fieldsHandler);
 
+genderSelect.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+    document.querySelector('.select-dropdown').classList.toggle('opened');
+    genderSelect.classList.toggle('opened');
+});
+document.querySelectorAll('.select-dropdown .option').forEach((option) => {
+    option.addEventListener('click', (event) => {
+       genderSelect.selectedIndex = event.target.dataset.index;
+       document.querySelector('.select-dropdown').classList.remove('opened');
+       genderSelect.dispatchEvent(new Event('change'));
+   });
+});
 addFileButton.addEventListener('click', () => filesInput.click());
 filesInput.addEventListener('change', fileChangeHandler);
 

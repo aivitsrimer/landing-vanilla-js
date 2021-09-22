@@ -27,24 +27,6 @@ body, button {
     font-family: 'Montserrat', sans-serif;
 }
 
-input,
-select {
-    font-family: inherit;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-    height: 56px;
-    margin: 0;
-    padding: 16px;
-    text-transform: none;
-
-    background: #FFFFFF;
-    border: 1px solid #D9BBFF;
-    border-radius: 12px;
-    color: #303030;;
-}
-
 button,
 button.primary {
     width: 212px;
@@ -106,10 +88,40 @@ button.secondary[disabled] {
 
 input,
 select {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    height: 56px;
+    margin: 0;
+    padding: 16px;
+    text-transform: none;
+
+    background: #FFFFFF;
+    border: 1px solid #D9BBFF;
+    border-radius: 12px;
+    color: #303030;
+}
+
+input,
+select {
     width: 416px;
 }
 
-input:hover, input:focus, input.active {
+select {
+    color: #9F9F9F;
+    cursor: pointer;
+    background: #FFFFFF url("../assets/select-arrow.svg") no-repeat center;
+    background-position-x: 270px;
+}
+
+select.active {
+    color: #303030;
+}
+
+input:hover, input:focus, input.active,
+select:hover, select:focus, select.active {
     border: 1px solid #8E43ED;
 }
 

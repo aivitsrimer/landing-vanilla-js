@@ -51,6 +51,48 @@ form {
     width: 304px;
 }
 
+.form-group.select {
+    appearance: none;
+    position: relative;
+}
+
+.form-group select.opened {
+    border: 1px solid #8E43ED;
+}
+
+.form-group .select-dropdown {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 87px;
+    background: #FFFFFF;
+    border: 1px solid #D4B1FF;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.form-group .select-dropdown.opened {
+    display: block;
+}
+
+.form-group .select-dropdown .option {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.form-group .select-dropdown .option + .option {
+    border-top: 1px solid #D4B1FF;
+}
+
+.form-group .select-dropdown .option:hover {
+    background: #FDFCFF;
+}
+
 .step.container-uploader {
     flex-direction: column;
     height: auto;
