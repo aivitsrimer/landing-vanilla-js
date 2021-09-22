@@ -13,6 +13,8 @@ countryInput.addEventListener('change', fieldsHandler);
 cityInput.addEventListener('change', fieldsHandler);
 dobInput.addEventListener('change', fieldsHandler);
 
+addFileButton.addEventListener('click', addFileHandler);
+
 function showNextStep(nextStepId) {
     if (nextStepId <= 3) {
         let nextStep = document.querySelector(`.step[data-id="${nextStepId}"]`);
@@ -32,4 +34,6 @@ function fieldsHandler(event) {
     }
 }
 
-fieldsHandler();
+function addFileHandler() {
+    document.getElementById('file').click();
+}
