@@ -38,7 +38,17 @@ function fieldsHandler(event) {
     }
 }
 
-function renderFile(file) {
+function fileChangeHandler() {
+    let files = filesInput.files;
+    for (let i = 0; i < files.length; i++) {
+        fileList.push(files[i]);
+        renderFile(files[i], fileList.length - 1);
+        let fileDeleteButtons = document.querySelectorAll('.files .file-delete');
+        fileDeleteButtons[fileDeleteButtons.length - 1].addEventListener('click', deleteFileHandler);
+    }
+}
+
+function renderFile(file, id) {
     let nameSplitted = file.name.split('.');
     let name = nameSplitted[0];
     let size = calculateHumanFileSize(file.size);
@@ -46,22 +56,15 @@ function renderFile(file) {
 
     let template = document.createElement('div');
     template.classList.add('file');
+    template.dataset.id = id;
     template.innerHTML = `<div class="file-info">
               <div class="file-data">
                 <p class="file-name">${name}</p>
                 <p class="file-size">${extension} ${size}</p>
               </div>
             </div>
-            <a href="#" class="file-delete"><img src="./assets/trashbin.svg" alt="delete"></a>`;
+            <div class="file-delete" data-id="${id}"><img src="./assets/trashbin.svg" alt="delete"></div>`;
     document.querySelector('.files').appendChild(template);
-}
-
-function fileChangeHandler() {
-    let files = filesInput.files;
-    for (let i = 0; i < files.length; i++) {
-        fileList.push(files[i]);
-        renderFile(files[i]);
-    }
 }
 
 function calculateHumanFileSize(fileSizeInBytes) {
@@ -73,4 +76,11 @@ function calculateHumanFileSize(fileSizeInBytes) {
     } while (fileSizeInBytes > 1024 && i < byteUnits.length - 1);
 
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
+}
+
+function deleteFileHandler(event) {
+    event.preventDefault();
+    let currentFile = event.target.closest('.file');
+    delete fileList[parseInt(currentFile.dataset.id)];
+    currentFile.remove();
 }

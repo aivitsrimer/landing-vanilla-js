@@ -145,6 +145,7 @@ button.add {
 
 .file .file-delete {
     margin-right: 4px;
+    cursor: pointer;
 }
 
 .send {
