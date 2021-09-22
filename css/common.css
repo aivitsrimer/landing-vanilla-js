@@ -76,7 +76,7 @@ button.primary:active {
 button[disabled],
 button.primary[disabled] {
     background: #DED9E4;
-    border: none;
+    border: 1px solid #DED9E4;
     cursor: default;
 }
 
@@ -109,7 +109,7 @@ select {
     width: 416px;
 }
 
-input:hover, input:focus {
+input:hover, input:focus, input.active {
     border: 1px solid #8E43ED;
 }
 

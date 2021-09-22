@@ -167,6 +167,10 @@ button.add {
     visibility: hidden;
 }
 
+.send .success.active {
+    visibility: visible;
+}
+
 .send .success img {
     width: 32px;
     height: 32px;

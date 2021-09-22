@@ -1,3 +1,4 @@
+let form = document.querySelector('form');
 let nameInput = document.querySelector('#name');
 let genderSelect = document.querySelector('#gender');
 let countryInput = document.querySelector('#country');
@@ -10,6 +11,7 @@ let submitButton = document.querySelector('.send [type="submit"]');
 
 let fileList = [];
 
+form.addEventListener('submit', submitFormHandler);
 nameInput.addEventListener('change', fieldsHandler);
 genderSelect.addEventListener('change', fieldsHandler);
 countryInput.addEventListener('change', fieldsHandler);
@@ -18,7 +20,6 @@ dobInput.addEventListener('change', fieldsHandler);
 
 addFileButton.addEventListener('click', () => filesInput.click());
 filesInput.addEventListener('change', fileChangeHandler);
-submitButton.addEventListener('click', toggleSubmitButton);
 
 function showNextStep(nextStepId) {
     if (nextStepId <= 3) {
@@ -28,9 +29,13 @@ function showNextStep(nextStepId) {
 }
 
 function fieldsHandler(event) {
+    if (event.target.value && !event.target.classList.contains('active')) {
+        event.target.classList.add('active');
+    }
+
     let steps = document.querySelectorAll('.step.active');
     let currentStepId = parseInt(steps[steps.length - 1].dataset.id);
-    const isFilledStep1 = nameInput.value && genderSelect.value !== "0";
+    const isFilledStep1 = nameInput.value && genderSelect.value;
     const isFilledStep2 = countryInput.value && cityInput.value && dobInput.value;
     if ((currentStepId === 1 && isFilledStep1)
         || (currentStepId === 2 && isFilledStep1 && isFilledStep2)
@@ -89,11 +94,32 @@ function deleteFileHandler(event) {
 }
 
 function toggleSubmitButton() {
-    console.log(submitButton.attributes)
-    if (document.querySelector('.files').innerHTML) {
-        submitButton.disabled = false;
-        console.log(submitButton.attributes)
-    } else {
-        submitButton.disabled = true;
-    }
+    submitButton.disabled = !(document.querySelector('.files').innerHTML);
+}
+
+function collectFormData() {
+    let data = new FormData();
+
+    data.append('name', nameInput.value);
+    data.append('gender', genderSelect.value);
+    data.append('country', countryInput.value);
+    data.append('city', cityInput.value);
+    data.append('dob', dobInput.value);
+    fileList.forEach((file) => {
+        data.append('files[]', file, file.name);
+    })
+
+    return data;
+}
+
+function submitFormHandler(event) {
+    event.preventDefault();
+    let success = document.querySelector('form .success')
+    success.classList.add('active');
+
+    let xhr = new XMLHttpRequest();
+    let data = collectFormData();
+    xhr.open( 'POST', event.target.action, true );
+    xhr.onreadystatechange = () => {submitButton.disabled = true};
+    xhr.send( data );
 }

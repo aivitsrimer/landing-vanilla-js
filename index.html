@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Jane Doe</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/index.css">
@@ -64,15 +64,15 @@
       <div class="step active" data-id="1">
         <div class="form-group">
           <label for="name">Your name</label>
-          <input type="text" id="name" required placeholder="Tell us your name">
+          <input type="text" id="name" name="name" required placeholder="Tell us your name">
 <!--          <div class="error-message">-->
 <!--            Invalid name-->
 <!--          </div>-->
         </div>
         <div class="form-group">
           <label for="gender">Your gender</label>
-          <select id="gender" required>
-            <option value="0">Chose your gender</option>
+          <select id="gender" name="gender" required>
+            <option value="">Chose your gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
@@ -81,15 +81,15 @@
       <div class="step" data-id="2">
         <div class="form-group">
           <label for="country">Your country</label>
-          <input type="text" id="country" required placeholder="Where are you from?">
+          <input type="text" id="country" name="country" required placeholder="Where are you from?">
         </div>
         <div class="form-group">
           <label for="city">Your City</label>
-          <input type="text" id="city" required placeholder="Your native city">
+          <input type="text" id="city" name="city" required placeholder="Your native city">
         </div>
         <div class="form-group">
           <label for="dob">Your date of birth</label>
-          <input type="date" id="dob" required placeholder="dd.mm.yyyy">
+          <input type="text" id="dob" name="dob" required placeholder="dd.mm.yyyy">
         </div>
       </div>
       <div class="step container-uploader" data-id="3">
@@ -98,7 +98,7 @@
             Proof your identity with some documents
             <button type="button" class="secondary add">Add document</button>
           </label>
-          <input type="file" id="files" name="files" required multiple class="form-control-file">
+          <input type="file" id="files" name="files[]" required multiple class="form-control-file">
         </div>
         <div class="files"></div>
       </div>
