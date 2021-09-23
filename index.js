@@ -6,6 +6,8 @@ let cityInput = document.querySelector('#city');
 let dobInput = document.querySelector('#dob');
 let filesInput = document.querySelector('#files');
 
+let dropZone = document.querySelector('#drop-zone');
+
 let addFileButton = document.querySelector('.uploader .add');
 let submitButton = document.querySelector('.send [type="submit"]');
 
@@ -18,20 +20,16 @@ countryInput.addEventListener('change', fieldsHandler);
 cityInput.addEventListener('change', fieldsHandler);
 dobInput.addEventListener('change', fieldsHandler);
 
-genderSelect.addEventListener('mousedown', (event) => {
-    event.preventDefault();
-    document.querySelector('.select-dropdown').classList.toggle('opened');
-    genderSelect.classList.toggle('opened');
-});
-document.querySelectorAll('.select-dropdown .option').forEach((option) => {
-    option.addEventListener('click', (event) => {
-       genderSelect.selectedIndex = event.target.dataset.index;
-       document.querySelector('.select-dropdown').classList.remove('opened');
-       genderSelect.dispatchEvent(new Event('change'));
-   });
-});
+dropZone.addEventListener('dragover', dragOverHandler);
+document.addEventListener('drop', dropeFileHandler, false);
+
 addFileButton.addEventListener('click', () => filesInput.click());
 filesInput.addEventListener('change', fileChangeHandler);
+
+genderSelect.addEventListener('mousedown', mousedownHandler());
+document.querySelectorAll('.select-dropdown .option').forEach((option) => {
+    option.addEventListener('click', dropdownHandler());
+});
 
 function showNextStep(nextStepId) {
     if (nextStepId <= 3) {
@@ -59,11 +57,7 @@ function fieldsHandler(event) {
 function fileChangeHandler() {
     let files = filesInput.files;
     for (let i = 0; i < files.length; i++) {
-        fileList.push(files[i]);
-        renderFile(files[i], fileList.length - 1);
-        let fileDeleteButtons = document.querySelectorAll('.files .file-delete');
-        fileDeleteButtons[fileDeleteButtons.length - 1].addEventListener('click', deleteFileHandler);
-        toggleSubmitButton();
+        processFile(files[i]);
     }
 }
 
@@ -92,13 +86,21 @@ function renderFile(file, id) {
     document.querySelector('.files').appendChild(template);
 }
 
+function processFile(file) {
+    fileList.push(file);
+    renderFile(file, fileList.length - 1);
+    let fileDeleteButtons = document.querySelectorAll('.files .file-delete');
+    fileDeleteButtons[fileDeleteButtons.length - 1].addEventListener('click', deleteFileHandler);
+    toggleSubmitButton();
+}
+
 function calculateHumanFileSize(fileSizeInBytes) {
     let i = -1;
     let byteUnits = [' kb', ' mb'];
     do {
         fileSizeInBytes = fileSizeInBytes / 1024;
         i++;
-    } while (fileSizeInBytes > 1024 && i < byteUnits.length - 1);
+    } while (fileSizeInBytes > 1000 && i < byteUnits.length - 1);
 
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
 }
@@ -140,4 +142,36 @@ function submitFormHandler(event) {
     xhr.open( 'POST', event.target.action, true );
     xhr.onreadystatechange = () => {submitButton.disabled = true};
     xhr.send( data );
+}
+
+function mousedownHandler() {
+    return (event) => {
+        event.preventDefault();
+        document.querySelector('.select-dropdown').classList.toggle('opened');
+        genderSelect.classList.toggle('opened');
+    };
+}
+
+function dropdownHandler() {
+    return (event) => {
+        genderSelect.selectedIndex = event.target.dataset.index;
+        document.querySelector('.select-dropdown').classList.remove('opened');
+        genderSelect.dispatchEvent(new Event('change'));
+    };
+}
+
+function dropeFileHandler(event) {
+    event.preventDefault();
+    let filesItems = event.dataTransfer.items;
+    if (filesItems) {
+        for (let i = 0; i < filesItems.length; i++) {
+            if (filesItems[i].kind === 'file') {
+                let file = filesItems[i].getAsFile();
+                processFile(file);
+        }}
+    }
+}
+
+function dragOverHandler(event) {
+    event.preventDefault();
 }
