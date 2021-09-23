@@ -1,3 +1,7 @@
+.profile-mobile-rectangles {
+    display: none;
+}
+
 @media screen and (max-width: 480px) {
     h1 {
         font-size: 40px;
@@ -55,10 +59,29 @@
         flex-direction: column;
     }
 
+    .profile .profile-rectangles {
+        top: 327px;
+        bottom: auto;
+        right: 3.5%;
+        left: auto;
+    }
+
     .profile .profile-vector-top,
     .profile .profile-vector-bottom,
     .profile .profile-rectangles {
         display: none;
+    }
+
+    .profile-photo {
+        position: relative;
+    }
+
+    .profile-mobile-rectangles {
+        position: absolute;
+        height: 117px;
+        bottom: -17px;
+        right: 0;
+        display: block;
     }
 
     .profile .profile-photo {
@@ -108,9 +131,14 @@
         margin-bottom: 0;
     }
 
-    .form-section .about-rectangles-left,
-    .form-section .about-rectangles-right {
+    .form-section .about-rectangles-left {
         display: none;
+    }
+
+    .form-section .about-rectangles-right {
+        top: 24px;
+        right: 20px;
+        transform: rotate(-160deg);
     }
 
     .form-section h2 {
@@ -178,11 +206,47 @@
         visibility: visible;
     }
 
+    .slider-section {
+        padding: 32px 0;
+    }
+
+    .slider {
+        width: 346px;
+        margin: 0 auto;
+    }
+
     .slider-item {
-        width: 100%;
+        min-width: 100%;
+        overflow: hidden;
+    }
+
+    .slider-item .caption {
+        padding: 0 14%;
+    }
+
+    .slider-item .caption h2 {
+        text-align: center;
+        font-size: 40px;
+        line-height: 48px;
     }
 
     .slider-item .caption p {
         width: 100%;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .slider .slider-control {
+        top: auto;
+        height: 104px;
+        z-index: 2;
+    }
+
+    .slider .slider-indicators {
+        left: 0;
+        right: 0;
+        bottom: 37px;
+        width: auto;
+        margin: 0 auto;
     }
 }

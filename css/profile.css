@@ -35,7 +35,7 @@
     height: 600px;
 }
 
-.profile .profile-photo img {
+.profile .profile-photo .profile-photo-img {
     width: 100%;
     height: 100%;
     border-radius: 32px;

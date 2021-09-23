@@ -14,39 +14,39 @@
 }
 
 .slider.slide1 .slider-item[data-id="1"] {
-    transform: translateX(0px);
+    transform: translateX(0);
 }
 
 .slider.slide1 .slider-item[data-id="2"] {
-    transform: translateX(0px);
+    transform: translateX(0);
 }
 
 .slider.slide1 .slider-item[data-id="3"] {
-    transform: translateX(0px);
+    transform: translateX(0);
 }
 
 .slider.slide2 .slider-item[data-id="1"] {
-    transform: translateX(-1312px);
+    transform: translateX(-100%);
 }
 
 .slider.slide2 .slider-item[data-id="2"] {
-    transform: translateX(-1312px);
+    transform: translateX(-100%);
 }
 
 .slider.slide2 .slider-item[data-id="3"] {
-    transform: translateX(-1312px);
+    transform: translateX(-100%);
 }
 
 .slider.slide3 .slider-item[data-id="1"] {
-    transform: translateX(-2624px);
+    transform: translateX(-200%);
 }
 
 .slider.slide3 .slider-item[data-id="2"] {
-    transform: translateX(-2624px);
+    transform: translateX(-200%);
 }
 
 .slider.slide3 .slider-item[data-id="3"] {
-    transform: translateX(-2624px);
+    transform: translateX(-200%);
 }
 
 .slider-item {
